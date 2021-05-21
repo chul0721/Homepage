@@ -13,6 +13,51 @@ body {
 }
 
 @font-face {
-  font-family: Inconsolata;
-  src: url('../fonts/Inconsolata.ttf');
+  font-family: NanumGothic;
+  src: url('../fonts/NanumGothicCoding-Bold.ttf');
+}
+
+@font-face {
+  font-family: BlackHanSans;
+  src: url('../fonts/BlackHanSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: DoHyeon;
+  src: url('../fonts/DoHyeon-Regular.ttf');
+}
+
+.linear-wipe {
+  background: linear-gradient(to left,#51a2fa 20%, #4f9ff4 40%,#4db3ef 60%, #46b1ff 80%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: 
+    typing 0.4s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 15% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
 }

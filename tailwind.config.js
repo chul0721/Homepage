@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        inconsolata: ['Inconsolata']
+        nanum: ['NanumGothic'],
+        blackhansans: ['BlackHanSans'],
+        dohyeon: ['DoHyeon']
       }
     }
   },
