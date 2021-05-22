@@ -1,4 +1,5 @@
 {
+  "homepage": "https://devint.xyz",
   "name": "homepage",
   "version": "0.1.0",
   "private": true,
@@ -14,6 +15,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "semantic-ui-react": "^2.0.3",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
@@ -22,7 +24,9 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "lint": "yarn prettier --write ."
+    "lint": "yarn prettier --write .",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

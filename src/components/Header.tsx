@@ -1,5 +1,14 @@
 import { Component } from 'react'
 import MenuOptionEnum from '../typings/MenuOptionEnum'
+import {
+  Checkbox,
+  Grid,
+  Image,
+  Menu,
+  Ref,
+  Segment,
+  Sidebar,
+} from 'semantic-ui-react'
 
 const MenuOptions = [
   {
@@ -51,6 +60,45 @@ class Header extends Component {
             ))}
           </div>
         </div>
+        <Grid columns={1}>
+      <Grid.Column>
+        <Checkbox
+          checked={visible}
+          label={{ children: <code>visible</code> }}
+          onChange={(e, data) => setVisible(data.checked)}
+        />
+      </Grid.Column>
+
+      <Grid.Column>
+        <Sidebar.Pushable as={Segment.Group} raised>
+          <Sidebar
+            as={Menu}
+            animation='overlay'
+            icon='labeled'
+            inverted
+            onHide={() => setVisible(false)}
+            vertical
+            target={segmentRef}
+            visible={visible}
+            width='thin'
+          >
+            <Menu.Item as='a'>Home</Menu.Item>
+            <Menu.Item as='a'>Games</Menu.Item>
+            <Menu.Item as='a'>Channels</Menu.Item>
+          </Sidebar>
+
+          <Ref innerRef={segmentRef}>
+            <Segment secondary>
+              <p>When you will click there, the sidebar will be closed.</p>
+            </Segment>
+          </Ref>
+
+          <Segment>
+            <Image src='/images/wireframe/paragraph.png' />
+          </Segment>
+        </Sidebar.Pushable>
+      </Grid.Column>
+    </Grid>
       </nav>
     )
   }
